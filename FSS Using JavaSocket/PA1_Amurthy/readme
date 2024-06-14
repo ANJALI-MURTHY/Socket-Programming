@@ -1,0 +1,59 @@
+****************************************************************
+Anjali Jayadeva Murthy
+G01373209
+amurthy2@gmu.edu
+****************************************************************
+
+This file contains details on how to setup client and server connections
+
+The zip contains the following files.
+1. Client.java - Source code for Client 
+2. Server.java - Source code for Server
+3. Client.class
+4. Server.class
+5. pa1.jar - Jar file on which commands are run on
+
+Commands to execute the jar file:
+
+1. java -cp pa1.jar server start 4000 #You can use any port number. 
+
+This command needs to be run on one terminal to start the server
+
+2.export PA1_SERVER= localhost:4000
+#Use the same port number you used while running the previous command.
+This command is to setup the server environment.
+
+3.java -cp pa1.jar client upload <path/of/the/file/on/client> <path/on_the_server_where_file_should_be_uploaded/filename> 
+#Include the filename at the end of the path, your new file that gets added on the server in the destination path will have this name.
+
+4.java -cp pa1.jar client download </path/existing_filename/on/server> <path_on_client/filename>
+#include the file name after that path_on_client. You can see your downloaded file with the name you specify here.
+
+
+---->Directory Operations
+
+5.java -cp pa1.jar client dir <path_to_existing_directory_on_server>
+This will return a list of all the files that are present in that path.
+
+6.java -cp pa1.jar client mkdir </path_to_new_directory_on_server/directory_name>
+This command will create a new directory on the server with the name you specify
+
+7.java -cp pa1.jar client rmdir </path_existing_directory_on_server/directory_name>
+This command will remove the directory you specify in the path.
+
+8.java -cp pa1.jar client rm </path_to_existing_filename_on_server/filename>
+This command will remove the file you mention in this path.
+
+9.java -cp pa1.jar client shutdown
+This command will shut down the client and server connection.
+
+
+Note:
+1.The server stores the received files in the location you mention in the path.You can check by navigating into the folder and looking for the file you specified in the path.For you convinience
+I have created a folder named 'Serverfiles', you can use this folder's path during upload and download as the server path
+And  'Clientfiles' folder's path as the client path.
+
+2.Error messages and expections are handled. It will get logged on the console/terminal every time an error occurs.
+
+3.Multiple clients can connect with the server at any given time.
+
